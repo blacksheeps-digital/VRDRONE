@@ -34,7 +34,7 @@ h1 {
 }
 
 h2 {
-    color: $black;
+    color: $text-blue;
     text-align: center;
     font-weight: bold;
     @include rhythm(40, 48);
@@ -46,11 +46,18 @@ h2 {
 h3 {
     color: $black;
     text-align: center;
-    font-weight: 500;
+    font-weight: bold;
     @include rhythm(24, 28);
+
+    &.smaller{
+        @include rhythm(20,24);
+    }
 }
 
 // // Card
+a {
+    text-decoration: none;
+}
 .card {
     padding: 20px;
     transition: all ease-in-out 0.5ms;
@@ -102,12 +109,27 @@ h3 {
     background-color: $green;
     color: white;
     padding: 14px 18px;
-    border: 1px solid $green;
-
+    border: 2px solid $green;
+    text-transform: uppercase;
+    border-radius: 0;
     &:hover {
         color: white;
         background-color: $dark-green;
-        border: 1px solid $green;
+        border: 2px solid $green;
+        font-weight: bold;
+    }
+}
+
+.blue{
+    background-color: transparent;
+    border-color: $text-blue;
+    color: $text-blue;
+    font-weight: bold;
+    &:hover{
+        background-color: $text-blue;
+        color: white;
+        border-color: $text-blue;
+
     }
 }
 
@@ -134,21 +156,32 @@ h3 {
 
 .video {
     position: relative;
-    &.no-bg::before {
-        background: none !important;
-    }
-    &:hover {
-        background: none !important;
+    &:hover::before {
+        opacity: 0;
     }
     &::before {
+        position: absolute;
+        content: "";
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%);
+        inset: 0;
+        z-index: 1;
+        transition: all 0.3s ease-in-out;
+    }
+    &.no-bg::before {
+        background: none !important;
         content: url("../images/play.svg");
         position: absolute;
         transform: translate(-50%, -50%); /* Center the content */
         left: 50%;
         top: 50%;
-        background:
-            linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%),
-            lightgray 0% 0% / 50px 50px repeat;
+    }
+    &::after {
+        position: absolute;
+        transform: translate(-50%, -50%); /* Center the content */
+        left: 50%;
+        top: 50%;
+        content: url("../images/play.svg");
+        z-index: 10;
     }
 }
 
