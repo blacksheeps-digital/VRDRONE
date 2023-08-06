@@ -1,1 +1,158 @@
 // General Style
+section {
+    padding-top: 5rem;
+    padding-bottom: 2.5rem;
+}
+
+.white {
+    color: white;
+}
+.black {
+    color: $black;
+}
+.blue {
+    color: $text-blue;
+}
+.gray {
+    color: $gray;
+}
+
+// // Typography
+h1 {
+    color: #fff;
+    font-weight: 400;
+    @include rhythm(36, 44);
+    .big {
+        color: $text-blue;
+        font-size: 48px;
+        font-weight: 500;
+        @include rhythm(48, 54);
+    }
+    .huge {
+        @include rhythm(64, 70);
+    }
+}
+
+h2 {
+    color: $black;
+    text-align: center;
+    font-weight: bold;
+    @include rhythm(40, 48);
+    .smaller {
+        @include rhythm(32, 38);
+    }
+}
+
+h3 {
+    color: $black;
+    text-align: center;
+    font-weight: 500;
+    @include rhythm(24, 28);
+}
+
+// // Card
+.card {
+    padding: 20px;
+    transition: all ease-in-out 0.5ms;
+    background-color: transparent;
+    border: none;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    &:hover {
+        transform: scale(1.05);
+        transition: all ease-in-out 0.3s;
+    }
+    .card-header {
+        padding: 0;
+        position: relative;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .card-body {
+        background-color: white;
+        padding: 20px 30px 40px;
+        &.big {
+            padding: 20px 70px 40px;
+        }
+    }
+    ul {
+        margin: 25px 0 40px;
+        li {
+            font-weight: 500;
+            @include rhythm(14, 18);
+            font-style: italic;
+        }
+    }
+    p {
+        text-align: center;
+        font-style: italic;
+        font-weight: 400;
+        @include rhythm(14, 18);
+    }
+}
+
+// // Button
+.btn {
+    background-color: $green;
+    color: white;
+    padding: 14px 18px;
+    border: 1px solid $green;
+
+    &:hover {
+        color: white;
+        background-color: $dark-green;
+        border: 1px solid $green;
+    }
+}
+
+.transparent {
+    background-color: white;
+    color: $green;
+    font-weight: bold;
+    &:hover {
+        background-color: $green;
+        color: white;
+    }
+}
+
+.italic-text {
+    @include rhythm(14, 20);
+    font-style: italic;
+}
+.italic-text:hover.btn {
+    font-weight: bold;
+    font-style: normal;
+}
+
+// // Play Btn
+
+.video {
+    position: relative;
+    &.no-bg::before {
+        background: none !important;
+    }
+    &:hover {
+        background: none !important;
+    }
+    &::before {
+        content: url("../images/play.svg");
+        position: absolute;
+        transform: translate(-50%, -50%); /* Center the content */
+        left: 50%;
+        top: 50%;
+        background:
+            linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%),
+            lightgray 0% 0% / 50px 50px repeat;
+    }
+}
+
+.empty-content {
+    flex: 1;
+    background-color: red; /* Optional: To visualize the empty column */
+}

@@ -17,3 +17,17 @@
 html {
   scroll-behavior: smooth;
 }
+
+.gradient {
+  background:
+    linear-gradient(180deg, rgba(8, 53, 148, 0.66) 0%, rgba(9, 27, 65, 0.9) 98.96%),
+    url(<path-to-image>),
+    lightgray 50% / cover no-repeat;
+}
+
+.black-grandient {
+  background:
+    linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%),
+    url(<path-to-image>),
+    lightgray 0% 0% / 50px 50px repeat;
+}
