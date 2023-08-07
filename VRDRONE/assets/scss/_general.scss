@@ -120,7 +120,7 @@ a {
     }
 }
 
-.blue{
+.blue-btn{
     background-color: transparent;
     border-color: $text-blue;
     color: $text-blue;
@@ -188,4 +188,11 @@ a {
 .empty-content {
     flex: 1;
     background-color: red; /* Optional: To visualize the empty column */
+}
+
+// Footer
+footer{
+    background-color: black;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
 }
