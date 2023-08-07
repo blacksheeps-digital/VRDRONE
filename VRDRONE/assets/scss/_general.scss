@@ -9,13 +9,13 @@ h1 {
     color: #fff;
     font-weight: 400;
     @include rhythm(36, 44);
-    .big {
+    &.big {
         color: $text-blue;
         font-size: 48px;
         font-weight: 500;
         @include rhythm(48, 54);
     }
-    .huge {
+    &.huge {
         @include rhythm(64, 70);
     }
 }
