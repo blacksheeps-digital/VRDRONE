@@ -4,19 +4,6 @@ section {
     padding-bottom: 2.5rem;
 }
 
-.white {
-    color: white;
-}
-.black {
-    color: $black;
-}
-.blue {
-    color: $text-blue;
-}
-.gray {
-    color: $gray;
-}
-
 // // Typography
 h1 {
     color: #fff;
@@ -49,8 +36,8 @@ h3 {
     font-weight: bold;
     @include rhythm(24, 28);
 
-    &.smaller{
-        @include rhythm(20,24);
+    &.smaller {
+        @include rhythm(20, 24);
     }
 }
 
@@ -120,16 +107,15 @@ a {
     }
 }
 
-.blue-btn{
+.blue-btn {
     background-color: transparent;
     border-color: $text-blue;
     color: $text-blue;
     font-weight: bold;
-    &:hover{
+    &:hover {
         background-color: $text-blue;
         color: white;
         border-color: $text-blue;
-
     }
 }
 
@@ -150,6 +136,25 @@ a {
 .italic-text:hover.btn {
     font-weight: bold;
     font-style: normal;
+}
+// // Overlay
+.overlay {
+    position: relative;
+    * {
+        color: white;
+    }
+    &::before {
+        position: absolute;
+        content: "";
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%);
+        inset: 0;
+        z-index: 1;
+        transition: all 0.3s ease-in-out;
+    }
+    & > div{
+        position: relative;
+        z-index: 1;
+    }
 }
 
 // // Play Btn
@@ -185,13 +190,8 @@ a {
     }
 }
 
-.empty-content {
-    flex: 1;
-    background-color: red; /* Optional: To visualize the empty column */
-}
-
 // Footer
-footer{
+footer {
     background-color: black;
     padding-top: 2rem;
     padding-bottom: 3rem;
