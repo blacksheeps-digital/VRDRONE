@@ -10,10 +10,11 @@
 @import "general";
 @import "layout";
 @import "module";
-
-
+@import "header";
+@import "slickJS";
 // // Pages
-@import './home/home';
+@import "./home/home";
+@import "./drones/drones";
 /* CUSTOM STYLES
 -------------------------------------------------- */
 //Smooth Scroll

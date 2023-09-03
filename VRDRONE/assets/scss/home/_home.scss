@@ -1,5 +1,41 @@
+.banner.home {
+    .row:first-child {
+        @include media-breakpoint-up(lg) {
+            margin-bottom: 5rem;
+        }
+    }
+    @include media-breakpoint-up(lg) {
+        .card {
+            position: relative;
+            z-index: 2;
+            margin-bottom: -8rem;
+        }
+    }
+}
+
+.home-tour {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+}
+
 .depoimentos {
     .card {
         filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.4));
+        @include media-breakpoint-up(lg) {
+            margin-bottom: -10.65rem;
+        }
+    }
+}
+
+.parceiros {
+    padding-top: 10rem;
+
+    h2 {
+        @include media-breakpoint-down(lg) {
+            margin-bottom: 2rem;
+        }
+        @include media-breakpoint-up(lg) {
+            margin-bottom: 3rem;
+        }
     }
 }
