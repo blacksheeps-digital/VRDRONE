@@ -2,19 +2,15 @@
 /*
 Template Name: Página principal
 */
-get_header( );
+get_header();
 ?>
 
 
-<h1>home</h1>
-
-
-<?php 
-			// get_template_part( 'template-parts/content', 'page' );
-
+<?php
+// get_template_part( 'template-parts/content', 'page' );
 ?>
 <h2>topo</h2>
-<?php 
+<?php
 // Obtém todos os termos da taxonomia "tipos-de-servicos"
 $terms = get_terms(array(
     'taxonomy' => 'tiipos-de-servicos',
@@ -35,7 +31,7 @@ foreach ($terms as $term) {
                 'field' => 'slug',
                 'terms' => $term->slug,
             ),
-            
+
         ),
     );
 
@@ -63,18 +59,18 @@ foreach ($terms as $term) {
 }
 
 ?>
-    <h2>Serviços</h2>
-    <?php echo do_shortcode('[panda_vr_drones_posts post_type="servicos" post_count=5 slider="true" taxonomy="tiipos-de-servicos:vr"]');?>
+<h2>Serviços</h2>
+<?php echo do_shortcode('[panda_vr_drones_posts post_type="servicos" post_count=5 slider="true" taxonomy="tiipos-de-servicos:vr"]'); ?>
 
-    <h2>Depoimentos</h2>
-    <?php echo do_shortcode('[panda_vr_drones_posts post_type="depoimentos" post_count=3 slider="false"]');?>
+<h2>Depoimentos</h2>
+<?php echo do_shortcode('[panda_vr_drones_posts post_type="depoimentos" post_count=3 slider="false"]'); ?>
 
-    <h2>Conheça nosso blog</h2>
-    <?php echo do_shortcode('[panda_vr_drones_posts post_type="post" post_count=3 slider="false"]');?>
+<h2>Conheça nosso blog</h2>
+<?php echo do_shortcode('[panda_vr_drones_posts post_type="post" post_count=3 slider="false"]'); ?>
 
 
- 
 
-<?php 
+
+<?php
 get_footer();
 ?>
