@@ -12,6 +12,7 @@ if (!defined('_S_VERSION')) {
 	// Replace the version number of the theme on each release.
 	define('_S_VERSION', '1.0.0');
 	define('IMG', trailingslashit(get_template_directory_uri()) . 'assets/images/');
+	if (!defined('SITE')) define('SITE', get_bloginfo('url'));
 }
 
 /**
