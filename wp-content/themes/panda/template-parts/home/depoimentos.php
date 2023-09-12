@@ -2,10 +2,10 @@
     <div class="container h-100">
         <div class="row align-items-center justify-content-center h-100">
             <div class="col-md-12">
-                <h2 class="text-center white">Depoimentos</h2>
+                <h2 class="text-center white" data-aos="slide-left" data-aos-duration="1000">Depoimentos</h2>
             </div>
             <a href="https://farm9.staticflickr.com/8642/16455005578_0fdfc6c3da_b.jpg" data-lity data-lity-desc="Photo of a flower">Image</a>
-            <div class="card col-md-4 p-3">
+            <div class="card col-md-4 p-3" data-aos="slide-right" data-aos-duration="1000">
                 <!-- lity video -->
                 <a href="https://www.youtube.com/watch?v=u31qwQUeGuM" class="d-block" data-lity>
                     <div class="card-header video">

@@ -1,13 +1,12 @@
 <section class="blog gray-bg">
     <div class="container h-100">
         <div class="row align-items-center justify-content-center h-100">
-            <div class="col-md-12">
+            <div class="col-md-12" data-aos="slide-left" data-aos-duration="1000">
                 <h2 class=" mb-md-5">Conheça nosso blog</h2>
             </div>
-            <div class="col-md-4 card">
+            <div class="col-md-4 card" data-aos="slide-right"  data-aos-duration="1000">
                 <div class="card-header">
-                    <!-- <img src='<?php echo IMG ?>' class='img-fluid' alt='' title='' loading='lazy'> -->
-                    <img src='assets/images/placeholder2.png' class='img-fluid' alt='' title='' loading='lazy'>
+                    <img src='<?php echo IMG ?>placeholder2.png' class='img-fluid' alt='' title='' loading='lazy'>
                 </div>
                 <div class="card-body">
                     <h3 class="text-start smaller mb-3">

@@ -150,11 +150,13 @@ function panda_scripts()
 	wp_enqueue_style('slick', 'https://cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css');
 	wp_enqueue_style('slick-theme', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css');
 	wp_enqueue_style('aos-theme', 'https://unpkg.com/aos@2.3.1/dist/aos.css');
+	wp_enqueue_style('lity-theme', 'https://cdnjs.cloudflare.com/ajax/libs/lity/2.4.1/lity.min.css');
 
 	wp_enqueue_script('panda-jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js', array(), null, true);
 	wp_enqueue_script('panda-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
 	wp_enqueue_script('panda-bs', get_template_directory_uri() . '/assets/js/vendor/bootstrap.bundle.min.js', array(), _S_VERSION, true);
 	wp_enqueue_script('panda-slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js', array(), null, true);
+	wp_enqueue_script('panda-lity', 'https://cdnjs.cloudflare.com/ajax/libs/lity/2.4.1/lity.min.js', array(), null, true);
 	wp_enqueue_script('panda-aos', 'https://unpkg.com/aos@2.3.1/dist/aos.js', array(), null, true);
 	wp_enqueue_script('panda-app', get_template_directory_uri() . '/assets/js/app.min.js', array(), _S_VERSION, true);
 

@@ -6,10 +6,19 @@ get_header();
 ?>
 
 
+<?php include get_template_directory() . '/template-parts/home/banner.php'; ?>
+<?php include get_template_directory() . '/template-parts/home/home-tour.php'; ?>
+<?php include get_template_directory() . '/template-parts/home/depoimentos.php'; ?>
+<?php include get_template_directory() . '/template-parts/home/parceiros.php'; ?>
+<?php include get_template_directory() . '/template-parts/global/blog-cta.php'; ?>
+
+
+
+
 <?php
 // get_template_part( 'template-parts/content', 'page' );
 ?>
-<h2>topo</h2>
+
 <?php
 // Obtém todos os termos da taxonomia "tipos-de-servicos"
 $terms = get_terms(array(
@@ -19,7 +28,7 @@ $terms = get_terms(array(
 
 // Loop pelos termos da taxonomia
 foreach ($terms as $term) {
-    echo '<h2>' . $term->name . '</h2>';
+    echo '<h3>' . $term->name . '</h3>';
 
     // Configura a consulta para obter os posts do termo atual
     $args = array(
@@ -59,6 +68,7 @@ foreach ($terms as $term) {
 }
 
 ?>
+
 <h2>Serviços</h2>
 <?php echo do_shortcode('[panda_vr_drones_posts post_type="servicos" post_count=5 slider="true" taxonomy="tiipos-de-servicos:vr"]'); ?>
 

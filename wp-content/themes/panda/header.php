@@ -68,8 +68,7 @@
 			<nav class="navbar navbar-expand-lg">
 				<div class="container">
 					<a class="navbar-brand" href="#">
-						<img src='<?php echo IMG ?>logoWhite' class='img-fluid' alt='' title='' loading='lazy'>
-						<!-- <img src='<?php echo IMG ?>logoWhite.png' class='img-fluid' alt='' title='' loading='lazy'> -->
+						<img src='<?php echo IMG ?>logoWhite.png' class='img-fluid' alt='' title='' loading='lazy'>
 					</a>
 					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>

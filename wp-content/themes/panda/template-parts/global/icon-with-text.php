@@ -8,9 +8,8 @@
             </div>
             <div class="col-md-4 text-center p-5">
                 <div class="d-flex flex-row align-items-center justify-content-center"></div>
-                <img src='<?php echo IMG ?>' class='img-fluid' alt='' title='' loading='lazy'>
-                <img src='./assets/images/taxa1.png' class='img-fluid' alt='' title='' loading='lazy'>
-                <h3 class="blue">Titulo Card</h3>
+                <img src='<?php echo IMG ?>taxa1.png' class='img-fluid' alt='' title='' loading='lazy'>
+                <h3 class="blue mt-4">Titulo Card</h3>
                 <p class="mt-4 fst-italic gray">
                     95% dos imóveis com Tour Virtual 3D tem maior probabilidade de receber ligações de clientes querendo
                     comprar ou arrendar.
