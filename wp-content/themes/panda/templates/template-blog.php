@@ -17,7 +17,6 @@ the_post();
 
 	<?php include get_template_directory() . '/template-parts/blog/page-content.php'; ?>
 
-
 </main>
 
 

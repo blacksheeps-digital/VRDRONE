@@ -1,0 +1,57 @@
+.banner:not(.home){
+    h1{
+        @include media-breakpoint-up(lg){
+            margin-bottom: 3rem;
+        }
+    }
+}
+
+.reverse {
+    @include media-breakpoint-down(md) {
+        & > div{
+            margin-bottom: 1rem;
+            &:first-child{
+                order: 1;
+            }
+
+            &:nth-child(2){
+                order: 0;
+            }
+            &:nth-child(3){
+                order: 2;
+            }
+
+            &:last-child{
+                order: 3;
+            }
+
+
+        }
+    }
+}
+
+.exemplo {
+    .card {
+        .card-body {
+            padding-bottom: 0;
+        }
+    }
+}
+
+
+// .responsive-iframe {
+//     position: relative;
+//     padding-bottom: 56.25%; /* 16:9 aspect ratio */
+//     height: 0;
+//     overflow: hidden;
+//     z-index: 999999;
+//   }
+
+//   .responsive-iframe iframe {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     z-index: 999999;
+//     height: 100%;
+//   }

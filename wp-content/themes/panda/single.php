@@ -1,6 +1,6 @@
 <?php
 
-$classe = 'single-noticias';
+$classe = 'blog-single';
 
 get_header();
 
@@ -16,17 +16,23 @@ the_post();
 
 
 	<section class="blog_single pt-0">
-		<div class="container-fluid h-100 mb-5" style="background-image: url(<?php echo $url ?>);">
+		<div class="container-fluid h-100 mb-5 d-flex flex-column" style="background-image: url(<?php echo $url ?>);">
 
+			<div class="col-12 text-center categoria mb-4  mt-auto align-self-end">
+				<a href="">CATEGORIA</a>
+			</div>
+			<div class="col-12 text-center mt-2 mb-5">
+				<h2 class="title text-center"><?php the_title(); ?></h2>
+			</div>
 		</div>
 		<div class="container h-100">
 			<div class="row align-items-center justify-content-center h-100 mb-4 pb-4">
 				<div class="col-md-4 text-left">
 					<div id="breadcrumbs">
 						<?php
-						if (is_front_page() || is_home() || is_single('') || is_tag() || (basename($template) === 'page-busca.php')) {
-							ah_breadcrumb();
-						}
+						// if (is_front_page() || is_home() || is_single('') || is_tag() || (basename($template) === 'page-busca.php')) {
+						// 	ah_breadcrumb();
+						// }
 						?>
 					</div>
 				</div>
@@ -58,52 +64,10 @@ the_post();
 			</div>
 			<div class="row align-items-center justify-content-center h-100">
 				<div class="col-md-12 blog__content">
-					<div class="col-12 text-center categoria my-4">
-						<a href="">CATEGORIA</a>
-					</div>
-					<h2 class="title"><?php the_title(); ?></h2>
 					<?php the_content(); ?>
-
 				</div>
 
-
-
-
-
-
-				<!-- <section class="blog">
-					<div class="container h-100">
-						<div class="row align-items-center justify-content-center h-100 blog_card">
-							<div class="col-md-12 text-center">
-								<h2 class="subtitle text-nowrap">Veja outras postagens relacionadas</h2>
-							</div>
-
-
-
-							<?php
-							// If there are posts
-							if ($posts_post) :
-								// Loop the posts
-								foreach ($posts_post as $post_post) :
-									include(get_template_directory() . '/includes/blog/card-blog.php');
-								endforeach;
-								wp_reset_postdata();
-							endif;
-							?>
-
-
-							<div class="col-md-12 text-center">
-								<a href="" class="btn">
-
-									Ver todos
-
-								</a>
-							</div>
-						</div>
-					</div>
-				</section> -->
 			</div>
-		</div>
 		</div>
 	</section>
 
@@ -123,7 +87,7 @@ the_post();
 
 
 
-	<section class="publicacoes section_blue_bg">
+	<!-- <section class="publicacoes section_blue_bg">
 		<div class="container h-100">
 			<div class="row align-items-center justify-content-center h-100 blog_card">
 				<div class="col-md-12 text-center">
@@ -153,7 +117,12 @@ the_post();
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
+
+
+
+	<?php include get_template_directory() . '/template-parts/global/blog-cta.php'; ?>
+
 
 
 

@@ -4,23 +4,7 @@
             <div class="col-md-12">
                 <h2 class="text-center white" data-aos="slide-left" data-aos-duration="1000">Depoimentos</h2>
             </div>
-            <a href="https://farm9.staticflickr.com/8642/16455005578_0fdfc6c3da_b.jpg" data-lity data-lity-desc="Photo of a flower">Image</a>
-            <div class="card col-md-4 p-3" data-aos="slide-right" data-aos-duration="1000">
-                <!-- lity video -->
-                <a href="https://www.youtube.com/watch?v=u31qwQUeGuM" class="d-block" data-lity>
-                    <div class="card-header video">
-                        <img src='<?php echo IMG ?>placeholder.png' class='img-fluid' alt='' title='' loading='lazy'>
-                    </div>
-                    <div class="card-body pb-4">
-                        <h3 class=" blue text-start">
-                            Nome da mulher
-                        </h3>
-                        <p class="fst-italic text-start">
-                            Lorem, ipsum.
-                        </p>
-                    </div>
-                </a>
-            </div>
+            <?php echo do_shortcode('[panda_vr_drones_posts post_type="depoimentos" post_count=3 slider="false"]'); ?>
         </div>
     </div>
 </section>

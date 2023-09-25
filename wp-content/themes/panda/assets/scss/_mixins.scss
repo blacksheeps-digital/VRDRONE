@@ -1,0 +1,21 @@
+// Mixins
+@mixin font-size($sizeValue: 16) {
+    font-size: $sizeValue + px;
+    font-size: (0.0625 * $sizeValue) + rem;
+}
+@mixin line-height($heightValue: 20) {
+    line-height: $heightValue + px;
+    line-height: (0.0625 * $heightValue) + rem;
+}
+@mixin rhythm($sizeValue: 16, $heightValue: 20) {
+    @include font-size($sizeValue);
+    @include line-height($heightValue);
+}
+@mixin background-cover {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
