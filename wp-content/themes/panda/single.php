@@ -16,57 +16,35 @@ the_post();
 
 
 	<section class="blog_single pt-0">
-		<div class="container-fluid h-100 mb-5 d-flex flex-column" style="background-image: url(<?php echo $url ?>);">
+		<div class="container-fluid h-100 mb-5 d-flex flex-column black-overlay" style="background-image: url(<?php echo $url ?>);">
 
-			<div class="col-12 text-center categoria mb-4  mt-auto align-self-end">
-				<a href="">CATEGORIA</a>
+			<div class="col-12 text-center categoria mb-4  mt-auto align-self-end" style="position: relative; z-index: 10;">
+				<a href="" class="text-white fw-bold">CATEGORIA</a>
 			</div>
-			<div class="col-12 text-center mt-2 mb-5">
-				<h2 class="title text-center"><?php the_title(); ?></h2>
+			<div class="col-12 text-center mt-2 mb-5" style="position: relative; z-index: 10;">
+				<h2 class="title text-center text-white"><?php the_title(); ?></h2>
 			</div>
 		</div>
 		<div class="container h-100">
-			<div class="row align-items-center justify-content-center h-100 mb-4 pb-4">
-				<div class="col-md-4 text-left">
-					<div id="breadcrumbs">
-						<?php
-						// if (is_front_page() || is_home() || is_single('') || is_tag() || (basename($template) === 'page-busca.php')) {
-						// 	ah_breadcrumb();
-						// }
-						?>
-					</div>
-				</div>
-				<div class="col-md-4 text-md-center">
-					<?php echo do_shortcode('[searchandfilter id="285"]')  ?>
-
-				</div>
-				<div class="col-md-4 text-md-right">
-					<input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
-					<label for="openSidebarMenu" class="sidebarIconToggle">
-						VER CATEGORIAS <i><img src='<?php echo IMG ?>icon.png' class='img-fluid' alt='' title='' loading='lazy'></i>
-					</label>
-					<input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
-					<label for="openSidebarMenu" class="sidebarIconToggle icon">
-						X
-					</label>
-
-					<div id="sidebarMenu">
-						<ul class="sidebarMenuInner">
-							<li>Jelena Jovanovic <span>Web Developer</span></li>
-							<li><a href="https://vanila.io" target="_blank">Company</a></li>
-							<li><a href="https://instagram.com/plavookac" target="_blank">Instagram</a></li>
-							<li><a href="https://twitter.com/plavookac" target="_blank">Twitter</a></li>
-							<li><a href="https://www.youtube.com/channel/UCDfZM0IK6RBgud8HYGFXAJg" target="_blank">YouTube</a></li>
-							<li><a href="https://www.linkedin.com/in/plavookac/" target="_blank">Linkedin</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
 			<div class="row align-items-center justify-content-center h-100">
-				<div class="col-md-12 blog__content">
+				<div class="col-md-10 blog__content">
 					<?php the_content(); ?>
 				</div>
 
+			</div>
+			<div class="row align-items-center justify-content-center h-100">
+				<div class="col-md-10 text-center">
+					<hr>
+					<div class="d-flex flex-row align-items-center justify-content-center author">
+						<div class="img" style="background-image: url('<?php echo IMG ?>placeholder.png')">
+						</div>
+						<div class="media-body text-start">
+							<p class="mb-0">Escrito por</p>
+							<p class="name mb-2">Nome Sobrenome</p>
+							<p class="position">Editor e colaborador VR DRONE</p>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>

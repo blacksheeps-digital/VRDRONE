@@ -8,8 +8,9 @@
  * Text Domain: panda-vr-drones
  */
 
- // Função para adicionar a página do plugin ao menu do WordPress
-function panda_vr_drones_add_plugin_page() {
+// Função para adicionar a página do plugin ao menu do WordPress
+function panda_vr_drones_add_plugin_page()
+{
     add_menu_page(
         'Panda VR Drones', // Título da página
         'Panda VR Drones', // Título do menu
@@ -23,8 +24,9 @@ function panda_vr_drones_add_plugin_page() {
 add_action('admin_menu', 'panda_vr_drones_add_plugin_page');
 
 // Função de callback para renderizar a página do plugin
-function panda_vr_drones_render_plugin_page() {
-    ?>
+function panda_vr_drones_render_plugin_page()
+{
+?>
     <div class="wrap">
         <h1>Página do Plugin Panda VR Drones</h1>
         <p>ta aqui?</p>
@@ -35,7 +37,8 @@ function panda_vr_drones_render_plugin_page() {
 
 
 // Função para adicionar a subpágina de configurações do plugin
-function panda_vr_drones_add_settings_page() {
+function panda_vr_drones_add_settings_page()
+{
     acf_add_options_sub_page(array(
         'page_title' => 'Configurações',
         'menu_title' => 'Configurações',
@@ -57,7 +60,8 @@ add_action('acf/init', 'panda_vr_drones_add_settings_page');
 
 
 // Função para registrar as abas e campos do ACF
-function panda_vr_drones_register_acf_fields() {
+function panda_vr_drones_register_acf_fields()
+{
     if (function_exists('acf_add_local_field_group')) {
         acf_add_local_field_group(array(
             'key' => 'group_plugin_settings',
@@ -194,8 +198,8 @@ add_action('acf/init', 'panda_vr_drones_register_acf_fields');
 
 
 
- 
-        
+
+
 
 
 
@@ -283,7 +287,8 @@ add_action('acf/init', 'panda_vr_drones_register_acf_fields');
 // add_shortcode('panda_vr_drones', 'panda_vr_drones_shortcode');
 
 
-function panda_vr_drones_posts_shortcode($atts) {
+function panda_vr_drones_posts_shortcode($atts)
+{
     $atts = shortcode_atts(array(
         'post_type' => 'post',
         'post_count' => 5,
@@ -326,20 +331,34 @@ function panda_vr_drones_posts_shortcode($atts) {
                 echo '<div class="slide">';
             }
 
-            echo '<h2>' . get_the_title() . '</h2>';
+            // echo '<h2>' . get_the_title() . '</h2>';
 
             // Verifica o tipo de post
             if ($atts['post_type'] == 'depoimentos') {
                 // Exibe o campo de vídeo, título e tipo de serviço para depoimentos
                 $video = get_field('video');
                 $tipo_servico = get_field('tipo_de_servico');
-                
-                if ($video) {
-                    echo 'depoimentos';
-                    echo '<div class="video">';
-                    echo $video;
-                    echo '</div>';
-                }
+
+    ?>
+                <div class="card col-md-4 p-3" data-aos="slide-right" data-aos-duration="1000">
+                    <!-- lity video -->
+                    <a href="https://www.youtube.com/watch?v=u31qwQUeGuM" class="d-block" data-lity>
+                        <div class="card-header video">
+                            <img src='<?php echo IMG ?>placeholder.png' class='img-fluid' alt='' title='' loading='lazy'>
+                        </div>
+                        <div class="card-body pb-4">
+                            <h3 class=" blue text-start">
+                                Nome da mulher
+                            </h3>
+                            <p class="fst-italic text-start">
+                                Lorem, ipsum.
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                <?php
+
+
 
                 if ($tipo_servico) {
                     echo '<p>Tipo de serviço: ' . $tipo_servico . '</p>';
@@ -348,7 +367,7 @@ function panda_vr_drones_posts_shortcode($atts) {
                 echo 'servicos';
                 // Exibe a lista de itens para serviços
                 $itens = get_field('itens');
-                
+
                 if ($itens) {
                     echo '<ul>';
                     foreach ($itens as $item) {
@@ -356,8 +375,27 @@ function panda_vr_drones_posts_shortcode($atts) {
                     }
                     echo '</ul>';
                 }
-            }
-            else{
+            } elseif ($atts['post_type'] == 'post') { ?>
+                <div class="col-md-4 card" data-aos="slide-right" data-aos-duration="1000">
+                    <div class="card-header">
+                        <img src='<?php echo IMG ?>placeholder2.png' class='img-fluid' alt='' title='' loading='lazy'>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="text-start smaller mb-3">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam non odio odio.
+                        </h3>
+
+                        <p class="text-start mb-4">
+                            Aliquam ornare lectus sed nisl commodo faucibus. Nam ac libero nec nisi faucibus bibendum. Sed sit amet
+                            massa sem. Morbi rhoncus lorem dui, vitae pharetra massa cursus nec [...]
+                        </p>
+
+                        <div class="col-md-12 text-center">
+                            <a href="" class="btn">CONTINUAR LENDO</a>
+                        </div>
+                    </div>
+                </div>
+<?php  } else {
                 echo "posts";
             }
 
@@ -369,8 +407,7 @@ function panda_vr_drones_posts_shortcode($atts) {
         if ($atts['slider']) {
             echo '</div>';
         }
-    }
-    else{
+    } else {
         echo "nem entrou";
     }
 
