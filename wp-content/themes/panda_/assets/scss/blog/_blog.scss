@@ -1,0 +1,350 @@
+// // Header/Nav
+.page-blog nav,
+.blog-single nav {
+    background-color: $dark-blue !important;
+    .navbar-brand img {
+        max-height: 40px;
+    }
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+// // Blog
+.blog,
+.busca,
+.blog_single {
+    .mb-4.pb-4 {
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+    h1 {
+        color: $dark-blue;
+    }
+
+    .searchandfilter {
+        ul {
+            padding-left: 0;
+            border-bottom: 1px solid #a3a3a3;
+            text-align: left;
+        }
+
+        li {
+            display: inline-block;
+        }
+        .sf-field-search {
+            width: 90%;
+            label {
+                width: 100%;
+            }
+        }
+
+        .sf-input-text {
+            border: none;
+            width: 100%;
+            &::placeholder {
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 19px;
+                padding-left: 10px;
+            }
+        }
+
+        .sf-field-submit input {
+            border: none;
+            background-color: transparent;
+            background-image: url("../images/lupa.png");
+            background-repeat: none;
+            background-size: cover;
+            background-position: center center;
+            height: 20px;
+            width: 20px;
+            margin-right: 10px;
+        }
+    }
+
+    @include media-breakpoint-down(md) {
+        .col-md-4.text-md-right {
+            margin-top: 2rem;
+        }
+    }
+}
+
+// //Sidebar
+#sidebarMenu {
+    height: 100%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 250px;
+    margin-top: 72px;
+    transform: translateX(250px);
+    transition: transform 250ms ease-in-out;
+    background: $dark-blue;
+    z-index: 9;
+    opacity: 1;
+}
+.sidebarMenuInner {
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.sidebarMenuInner li {
+    list-style: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 20px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.sidebarMenuInner li span {
+    display: block;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5);
+}
+.sidebarMenuInner li a {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+// // SearchFilter
+input[type="checkbox"]:checked ~ #sidebarMenu {
+    transform: translateX(0) !important;
+}
+
+input[type="checkbox"] {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    display: none;
+}
+
+.sidebarIconToggle {
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 19px;
+    text-align: right;
+    color: $dark-blue;
+    margin-bottom: 0;
+
+    &.icon {
+        font-style: 2em;
+        color: black;
+        cursor: pointer;
+        width: 0;
+        height: 0;
+        opacity: 0;
+        background-color: white;
+        border: 1px solid lightblue;
+        position: fixed;
+        top: 4.5rem;
+        right: 15.6rem;
+        z-index: 10;
+
+        @include media-breakpoint-down(md) {
+            right: auto;
+            left: 6rem;
+        }
+    }
+}
+
+input[type="checkbox"]:checked ~ .icon {
+    height: auto;
+    width: auto;
+    opacity: 1;
+    padding: 10px;
+}
+
+// // Single
+.blog_single,
+.text-block {
+    .categoria {
+        font-family: Fira Sans;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        letter-spacing: 0.18em;
+        text-align: left;
+        color: #666666;
+        a {
+            color: #666666;
+        }
+    }
+    blockquote,
+    blockquote p {
+        @include rhythm(24, 28);
+        font-weight: 600;
+        position: relative;
+        width: fit-content;
+    }
+
+    blockquote::before,
+    blockquote::after {
+        position: absolute;
+        content: ' " ';
+        display: block;
+        width: fit-content;
+        height: auto;
+    }
+
+    blockquote::before {
+        left: -10px;
+    }
+
+    blockquote::after {
+        right: -10px;
+        bottom: 0;
+    }
+
+    .container-fluid {
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 350px;
+    }
+    .blog__content {
+        h1 {
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 43px;
+            letter-spacing: 0em;
+            margin-bottom: 1rem;
+            color: $dark-blue;
+        }
+
+        .title {
+            text-align: center !important;
+        }
+
+        h2 {
+            font-size: 30px;
+            font-weight: 700;
+            line-height: 35px;
+            letter-spacing: 0em;
+            margin-bottom: 1rem;
+            color: $dark-blue;
+            text-align: left;
+        }
+
+        h3 {
+            font-size: 25px;
+            font-weight: 700;
+            line-height: 30px;
+            letter-spacing: 0em;
+
+            color: $dark-blue;
+        }
+        h4 {
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 25px;
+            letter-spacing: 0em;
+
+            color: $dark-blue;
+        }
+
+        ul {
+            list-style: none; /* Remove default bullets */
+        }
+
+        ul li::before {
+            content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+            color: $dark-blue; /* Change the color */
+            font-weight: bold; /* If you want it to be bold */
+            display: inline-block; /* Needed to add space between the bullet and the text */
+            width: 1em; /* Also needed for space (tweak if needed) */
+            margin-left: -1em; /* Also needed for space (tweak if needed) */
+        }
+    }
+}
+
+// // Cards
+.style_card {
+    .card {
+        border-radius: 0;
+        border: none;
+        background: transparent;
+        padding: 0;
+
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+        .cat {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 140%;
+            letter-spacing: 0.18em;
+            color: #363636;
+        }
+        .card-header {
+            border-radius: 0;
+            border: none;
+            background: transparent;
+            padding: 0;
+            padding: 0 18px;
+            height: 198px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .card-body {
+            border-radius: 0;
+            border: none;
+            background: transparent;
+            padding: 0;
+            padding: 0 18px;
+
+            a {
+                span {
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 20px;
+                    letter-spacing: 0.18em;
+                    text-align: left;
+                    color: #666;
+                }
+                h3 {
+                    font-style: normal;
+                    font-weight: 700;
+                    @include rhythm(21, 29);
+                    color: $text-blue;
+                    margin-top: 16px;
+                    text-align: start !important;
+                }
+                p {
+                    margin: 30px 0 42px 0;
+                    color: #323232;
+                    font-style: normal;
+                    @include rhythm(16, 22);
+                    text-align: start;
+                }
+            }
+        }
+        .card-footer {
+            border-radius: 0;
+            border: none;
+            background: transparent;
+            padding: 0;
+            padding: 0 18px;
+
+            a {
+                text-transform: uppercase;
+                font-weight: 500;
+                @include rhythm(16, 22);
+                color: white;
+                letter-spacing: 0.1em;
+                display: inline-block;
+                margin-bottom: 58px;
+            }
+        }
+        &:hover {
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+            transition: 0.3s ease all;
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+}

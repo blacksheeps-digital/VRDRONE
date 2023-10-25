@@ -1,0 +1,258 @@
+// General Style
+section {
+    padding-top: 5rem;
+    padding-bottom: 2.5rem;
+}
+
+.banner {
+    padding-top: 8rem;
+    @include media-breakpoint-up(lg) {
+        padding-top: 10rem;
+
+        .card {
+            position: relative;
+            z-index: 2;
+            margin-bottom: -4rem;
+        }
+    }
+}
+// // Typography
+h1 {
+    color: #fff;
+    font-weight: 400;
+    @include rhythm(36, 44);
+    &.big {
+        color: $text-blue;
+        font-size: 48px;
+        font-weight: 500;
+        @include rhythm(48, 54);
+    }
+    &.huge {
+        @include rhythm(64, 70);
+    }
+}
+
+h2 {
+    color: $text-blue;
+    text-align: center;
+    font-weight: bold;
+    @include rhythm(40, 48);
+    .smaller {
+        @include rhythm(32, 38);
+    }
+}
+
+h3 {
+    color: $black;
+    text-align: center;
+    font-weight: bold;
+    @include rhythm(24, 28);
+
+    &.smaller {
+        @include rhythm(20, 24);
+    }
+}
+
+// //Overlays
+.blue-overlay {
+    position: relative;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    &::after {
+        content: "";
+        background-color: rgb(8, 53, 148);
+        position: absolute;
+        inset: 0;
+        opacity: 0.8;
+        z-index: 1;
+    }
+
+    .container {
+        position: relative;
+        z-index: 2;
+    }
+}
+
+.black-overlay {
+    position: relative;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    &::after {
+        content: "";
+        background-color: black;
+        position: absolute;
+        inset: 0;
+        opacity: 0.6;
+        z-index: 1;
+    }
+
+    .container {
+        position: relative;
+        z-index: 2;
+    }
+}
+
+// // Card
+a {
+    text-decoration: none;
+}
+.card {
+    padding: 20px;
+    transition: all ease-in-out 0.5ms;
+    background-color: transparent;
+    border: none;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    &:hover {
+        transform: scale(1.05) !important;
+        transition: all ease-in-out 0.3s;
+    }
+    .card-header {
+        padding: 0;
+        position: relative;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .card-body {
+        background-color: white;
+        padding: 20px 30px 40px;
+        &.big {
+            padding: 20px 70px 40px;
+        }
+    }
+    ul {
+        margin: 25px 0 40px;
+        li {
+            font-weight: 500;
+            @include rhythm(14, 18);
+            font-style: italic;
+        }
+    }
+    p {
+        text-align: center;
+        font-style: italic;
+        font-weight: 400;
+        @include rhythm(14, 18);
+    }
+}
+
+.slick-cards {
+    .card-body{
+        padding-top: 4rem;
+    }
+}
+
+// // Button
+.btn {
+    background-color: $green;
+    color: white;
+    padding: 14px 18px;
+    border: 2px solid $green;
+    text-transform: uppercase;
+    border-radius: 0;
+    transition: background-color ease-in-out 0.5s !important;
+    &:hover {
+        color: white;
+        background-color: $dark-green;
+        font-weight: bold;
+    }
+}
+
+.blue-btn {
+    background-color: transparent;
+    border-color: $text-blue;
+    color: $text-blue;
+    font-weight: bold;
+    &:hover {
+        background-color: $text-blue;
+        color: white;
+        border-color: $text-blue;
+    }
+}
+
+.transparent {
+    background-color: white;
+    color: $green;
+    font-weight: bold;
+    &:hover {
+        background-color: $green;
+        color: white;
+    }
+}
+
+.italic-text {
+    @include rhythm(14, 20);
+    font-style: italic;
+}
+.italic-text:hover.btn {
+    transition: font-style ease-in-out 0.4s;
+    font-weight: bold;
+    font-style: normal;
+}
+
+// // Play Btn
+
+.video:not(.no-bg) {
+    position: relative;
+    &:hover::before {
+        opacity: 0;
+    }
+    &:hover::after {
+        border-left-color: $dark-green;
+    }
+    &::before {
+        position: absolute;
+        content: "";
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%);
+        inset: 0;
+        z-index: 1;
+        transition: all 0.3s ease-in-out;
+    }
+
+    &::after {
+        content: "";
+        border: 30px solid transparent;
+        border-left-color: white;
+        border-left-width: 45px;
+        border-right-width: 0;
+        position: absolute;
+        transform: translate(-50%, -50%); /* Center the content */
+        left: 50%;
+        top: 50%;
+        z-index: 10;
+    }
+}
+.video.no-bg {
+    position: relative;
+    transition: all ease-in-out 0.3s;
+    &:hover::before {
+        border-left-color: $green;
+    }
+    &::before {
+        border: 30px solid transparent;
+        border-left-color: white;
+        border-left-width: 45px;
+        border-right-width: 0;
+        position: absolute;
+        transform: translate(-50%, -50%); /* Center the content */
+        left: 50%;
+        top: 50%;
+        content: "";
+        transition: all ease-in-out 0.3s;
+    }
+}
+
+// Footer
+footer {
+    background-color: black;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+}

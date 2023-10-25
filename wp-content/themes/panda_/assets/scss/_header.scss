@@ -1,0 +1,40 @@
+.navbar {
+    &:not(.fixed-top) {
+        position: relative;
+        z-index: 10;
+        margin-bottom: -4.9rem;
+    }
+
+    .nav-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    .nav-link {
+        color: white;
+
+        &:hover,
+        &:focus {
+            color: $light-blue;
+        }
+    }
+
+    .dropdown-menu {
+        @include media-breakpoint-up(lg) {
+            text-align: center;
+        }
+
+        background-color: $dark-blue;
+        border-radius: 0;
+
+        a {
+            color: white;
+            &:hover {
+                color: $light-blue;
+                background-color: transparent;
+            }
+        }
+    }
+}

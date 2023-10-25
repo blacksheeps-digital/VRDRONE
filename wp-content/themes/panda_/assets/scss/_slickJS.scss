@@ -1,0 +1,54 @@
+.card .slick-dots {
+    margin: 0;
+    bottom: -45px;
+
+    li {
+        margin: 0 8px;
+    }
+
+    .slick-active button::before {
+        color: $green;
+    }
+
+    button {
+        padding: 5px 20px;
+
+        &::before {
+            font-size: 25px;
+        }
+    }
+}
+.slick-dotted.slick-slider {
+    margin-bottom: 0 !important;
+}
+
+.slick-arrow {
+    &::before {
+        content: url("../images/slickArrows.png") !important;
+    }
+}
+
+.card .slick-prev,
+.card .slick-next {
+    width: 30px;
+    height: 15px;
+    &::before {
+        @include media-breakpoint-down(lg) {
+            opacity: 1 !important;
+        }
+    }
+}
+
+.card .slick-prev {
+    rotate: (180deg);
+    left: 0;
+    z-index: 10;
+    &::before {
+    }
+}
+.card .slick-next {
+    right: 0;
+    z-index: 10;
+    &::before {
+    }
+}
